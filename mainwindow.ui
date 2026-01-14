@@ -1,0 +1,4145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>960</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1500</width>
+    <height>1500</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>1</width>
+    <height>1</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Airstrike</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Batalha Naval RPG</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/resources/gameicon.png</normaloff>:/resources/gameicon.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="base">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>960</width>
+     <height>720</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>960</width>
+     <height>720</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Comic Sans MS</family>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>960</width>
+      <height>720</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>960</width>
+      <height>720</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>960</width>
+      <height>720</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="currentIndex">
+     <number>10</number>
+    </property>
+    <widget class="QWidget" name="menu_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QWidget" name="menu_icon" native="true">
+      <property name="geometry">
+       <rect>
+        <x>315</x>
+        <y>0</y>
+        <width>320</width>
+        <height>330</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>450</width>
+        <height>450</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/resources/gameicon.png);</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="menu_options_button">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>450</y>
+        <width>300</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 60px;}
+QToolButton {background: transparent; color: white; font-size: 46px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Options</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="menu_quit_button">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>550</y>
+        <width>300</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 60px;}
+QToolButton {background: transparent; color: white; font-size: 46px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Quit</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="menu_play_button">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>350</y>
+        <width>300</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 60px;}
+QToolButton {background: transparent; color: white; font-size: 46px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Play</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="options_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QToolButton" name="options_back_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="options_credits_button">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>260</y>
+        <width>500</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 60px;}
+QToolButton {background: transparent; color: white; font-size: 46px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Credits</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="options_instructions_button">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>150</y>
+        <width>500</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 60px;}
+QToolButton {background: transparent; color: white; font-size: 46px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Instructions</string>
+      </property>
+      <property name="autoRaise">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="options_settings_button">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>40</y>
+        <width>500</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 60px;}
+QToolButton {background: transparent; color: white; font-size: 46px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Settings</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="playoptions_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QToolButton" name="playoptions_join_button">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>150</y>
+        <width>500</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 60px;}
+QToolButton {background: transparent; color: white; font-size: 46px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Join Lobby</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="playoptions_create_button">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>40</y>
+        <width>500</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 60px;}
+QToolButton {background: transparent; color: white; font-size: 46px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Create Lobby</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="playoptions_offline_button">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>260</y>
+        <width>500</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 60px;}
+QToolButton {background: transparent; color: white; font-size: 46px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Play Offline</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="playoptions_back_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="create_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QPlainTextEdit" name="create_insertname">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>80</y>
+        <width>300</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">text-align: center;
+border: 1px solid black;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+      </property>
+      <property name="plainText">
+       <string/>
+      </property>
+      <property name="overwriteMode">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="create_insertname_label">
+      <property name="geometry">
+       <rect>
+        <x>325</x>
+        <y>20</y>
+        <width>310</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string>Insert your nickame</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="create_selectchar_label">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>210</y>
+        <width>540</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Select your character&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="create_insertname_msg">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>140</y>
+        <width>300</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+background-color: red;
+border-color: 1px black;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhMultiLine</set>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Please choose a nickname with 3 to 12 symbols. &lt;br/&gt;(letters or numbers) &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="create_captain_icon">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>300</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="create_pirate_icon">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>300</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="create_space_icon">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>300</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="create_captain_name">
+      <property name="geometry">
+       <rect>
+        <x>85</x>
+        <y>500</y>
+        <width>230</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>28</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Captain&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="create_pirate_name">
+      <property name="geometry">
+       <rect>
+        <x>365</x>
+        <y>500</y>
+        <width>230</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>28</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pirate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="create_space_name">
+      <property name="geometry">
+       <rect>
+        <x>645</x>
+        <y>500</y>
+        <width>230</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>24</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Space &lt;br/&gt;Commander&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="create_back_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="create_info_button">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Info</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="create_start_button">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="invite_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QLabel" name="invite_sharecode_label">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>50</y>
+        <width>300</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>28</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Share code&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="invite_sharecode">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>120</y>
+        <width>300</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">text-align: center;
+background-color: rgb(255, 255, 255);
+border: 1px solid black;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="invite_leave_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>620</y>
+        <width>400</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Leave Lobby</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="invite_ready_button">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="invite_c1_character">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>480</y>
+        <width>431</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>28</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="invite_c1_icon">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>280</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="invite_c2_icon">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>280</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="invite_c2_character">
+      <property name="geometry">
+       <rect>
+        <x>489</x>
+        <y>480</y>
+        <width>431</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>28</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="invite_c1_name">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>180</y>
+        <width>301</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>28</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="invite_c2_name">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>180</y>
+        <width>301</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>28</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+text-align: center;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="join_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QLabel" name="join_insertname_label">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>10</y>
+        <width>300</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Insert nickame&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="join_insertname_msg">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>140</y>
+        <width>300</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+background-color: red;
+border-color: 1px black;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhMultiLine</set>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Please choose a nickname with 3 to 12 symbols. &lt;br/&gt;(letters or numbers) &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="join_insertname">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>80</y>
+        <width>300</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">text-align: center;
+border: 1px solid black;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+      </property>
+      <property name="plainText">
+       <string/>
+      </property>
+      <property name="overwriteMode">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="join_code_label">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>10</y>
+        <width>300</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>28</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Join code&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="join_captain_icon">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>300</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="join_space_name">
+      <property name="geometry">
+       <rect>
+        <x>645</x>
+        <y>500</y>
+        <width>230</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>24</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Space &lt;br/&gt;Commander&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="join_pirate_icon">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>300</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="join_space_icon">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>300</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="join_pirate_name">
+      <property name="geometry">
+       <rect>
+        <x>365</x>
+        <y>500</y>
+        <width>230</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>28</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pirate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="join_captain_name">
+      <property name="geometry">
+       <rect>
+        <x>85</x>
+        <y>500</y>
+        <width>230</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>28</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Captain&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="join_selectchar_label">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>210</y>
+        <width>540</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Select your character&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="join_start_button">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Join</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="join_back_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="join_insertcode">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>80</y>
+        <width>300</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">text-align: center;
+border: 1px solid black;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+      </property>
+      <property name="plainText">
+       <string/>
+      </property>
+      <property name="overwriteMode">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="join_wait">
+      <property name="geometry">
+       <rect>
+        <x>209</x>
+        <y>620</y>
+        <width>571</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="placement_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QGraphicsView" name="placement_board">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>110</y>
+        <width>500</width>
+        <height>500</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>500</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="placement_label">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>20</y>
+        <width>320</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Place your ships</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="placement_back_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="placement_randomize_button">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>620</y>
+        <width>400</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Randomize</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="placement_ready_button">
+      <property name="geometry">
+       <rect>
+        <x>679</x>
+        <y>620</y>
+        <width>301</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Start Game</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="game_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QGraphicsView" name="game_board">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>500</width>
+        <height>500</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>500</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+     </widget>
+     <widget class="QFrame" name="game_ui">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>0</y>
+        <width>318</width>
+        <height>573</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 0px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QGraphicsView" name="game_skill_ui">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>555</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>555</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/resources/skillui.png);</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+      <widget class="QLabel" name="game_skill2_label">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>343</y>
+         <width>120</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Vanilla Extract</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="game_skill1_button">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>200</y>
+         <width>61</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="game_actionp">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>510</y>
+         <width>101</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Vanilla Extract</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QProgressBar {color: white; background-color: black; border: 1px solid grey;}
+QProgressBar::chunk {background-color: rgb(85, 170, 255);}
+
+
+
+</string>
+       </property>
+       <property name="maximum">
+        <number>3</number>
+       </property>
+       <property name="value">
+        <number>3</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="invertedAppearance">
+        <bool>false</bool>
+       </property>
+       <property name="textDirection">
+        <enum>QProgressBar::TopToBottom</enum>
+       </property>
+       <property name="format">
+        <string notr="true">%v/%m</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="game_skill1_label">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>240</y>
+         <width>120</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Vanilla Extract</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="game_ultimate_label">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>450</y>
+         <width>120</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Vanilla Extract</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="game_skill2_button">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>300</y>
+         <width>61</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="game_ultimate_button">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>410</y>
+         <width>61</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="game_skill1_info_button">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>235</x>
+         <y>240</y>
+         <width>28</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+border: 0px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="game_skill2_info_button">
+       <property name="geometry">
+        <rect>
+         <x>235</x>
+         <y>340</y>
+         <width>28</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+border: 0px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="game_ultimate_info_button">
+       <property name="geometry">
+        <rect>
+         <x>235</x>
+         <y>450</y>
+         <width>28</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+border: 0px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="game_skill1_warning">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>214</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+background-color: red;
+border: 1px solid black;</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::ImhMultiLine</set>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <zorder>game_skill_ui</zorder>
+      <zorder>game_skill1_warning</zorder>
+      <zorder>game_skill1_button</zorder>
+      <zorder>game_skill1_info_button</zorder>
+      <zorder>game_actionp</zorder>
+      <zorder>game_skill1_label</zorder>
+      <zorder>game_skill2_button</zorder>
+      <zorder>game_skill2_info_button</zorder>
+      <zorder>game_skill2_label</zorder>
+      <zorder>game_ultimate_button</zorder>
+      <zorder>game_ultimate_info_button</zorder>
+      <zorder>game_ultimate_label</zorder>
+     </widget>
+     <widget class="QToolButton" name="game_board_button">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>550</y>
+        <width>591</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 45px;}
+QToolButton {background: transparent; color: white; font-size: 35px;}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset theme="applications-games"/>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="game_turn_button">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>620</y>
+        <width>300</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Pass Turn</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="game_continue_button">
+      <property name="geometry">
+       <rect>
+        <x>405</x>
+        <y>500</y>
+        <width>150</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QWidget" name="game_victory" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>0</width>
+        <height>0</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QWidget" name="game_skill_info" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>0</width>
+        <height>0</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/resources/captain_textBar.png);</string>
+      </property>
+      <widget class="QPlainTextEdit" name="game_skill_info_desc">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>330</y>
+         <width>361</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>380</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>KG Red Hands</family>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;
+background: transparent;
+border:0px;</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="plainText">
+        <string/>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::NoTextInteraction</set>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="game_skill_info_name">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>270</y>
+         <width>321</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>380</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>KG Red Hands</family>
+         <pointsize>14</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;
+background: transparent;
+border:0px;</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="plainText">
+        <string/>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::NoTextInteraction</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="game_skill_info_button">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>270</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="game_quit">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>649</y>
+        <width>150</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Quit</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="game_skill2_warning">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>746</x>
+        <y>318</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+background-color: red;
+border: 1px solid black;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhMultiLine</set>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="game_ultimate_warning">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>747</x>
+        <y>425</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+background-color: red;
+border: 1px solid black;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhMultiLine</set>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="game_normal_info_button">
+      <property name="geometry">
+       <rect>
+        <x>896</x>
+        <y>102</y>
+        <width>28</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+border: 0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="game_normal_button">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>60</y>
+        <width>61</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="game_normal_warning">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>814</x>
+        <y>127</y>
+        <width>100</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+background-color: red;
+border: 1px solid black;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhMultiLine</set>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="info_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QPushButton" name="info_pirate_icon">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>25</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="info_space_icon">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>25</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="info_captain_icon">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>25</y>
+        <width>125</width>
+        <height>125</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+border: 5px solid green;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="info_pages">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>150</y>
+        <width>960</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <widget class="QWidget" name="info_captain">
+       <widget class="QFrame" name="info_captain_skill1_icon">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>100</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 4px;
+border: 2px solid black;
+image: url(:/resources/airstrike.png)  2 2 2 2 stretch stretch;
+</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+       </widget>
+       <widget class="QFrame" name="info_captain_ultimate_icon">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>350</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 4px;
+border: 2px solid black;
+image: url(:/resources/nuclearbomb.png) 2 2 2 2 stretch stretch;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+       </widget>
+       <widget class="QFrame" name="info_captain_skill2_icon">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>225</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 4px;
+border: 2px solid black;
+image: url(:/resources/torpedo.png)  2 2 2 2 stretch stretch;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_captain_skill1_text">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>100</y>
+          <width>380</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="plainText">
+         <string>An aerial attack will damage everything in a 1x3 line. Costs 3 action points.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_captain_skill2_text">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>225</y>
+          <width>380</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="plainText">
+         <string>Fires a torpedo that will destroy the target if it hits it. Costs 3 action points.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_captain_ultimate_text">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>350</y>
+          <width>380</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustIgnored</enum>
+        </property>
+        <property name="plainText">
+         <string>Launch an atomic bomb that damages everything in a 3x3 square. Costs 5 action points.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_captain_label">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>30</y>
+          <width>331</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>26</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Captain&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_captain_skill_label">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>30</y>
+          <width>501</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>26</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white;
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Skill Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::RichText</enum>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_captain_text">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>100</y>
+          <width>330</width>
+          <height>350</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>350</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="plainText">
+         <string>The Captain is a decorated senior naval officer named O'Kane. O'Kane fights with his battle fleet, which includes a submarine, a battlecruiser, a battleship and an aircraft carrier. 
+The Captain fights with firepower, but his unique passive transform his normal skill into a &quot;Radar&quot; that allows him to scan the enemy field.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_captain_skill1_label">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>100</y>
+          <width>100</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 75);
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Airstrike&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_captain_skill2_label">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>225</y>
+          <width>100</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 75);
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Torpedo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_captain_ultimate_label">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>350</y>
+          <width>100</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 75);
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Nuclear&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="info_pirate">
+       <widget class="QFrame" name="info_pirate_skill1_icon_">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>100</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 4px;
+border: 2px solid black;
+image: url(:/resources/cannon.png) 2 2 2 2 stretch stretch;
+</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_pirate_skill_label">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>30</y>
+          <width>501</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>26</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white;
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Skill Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::RichText</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_pirate_skill2_label">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>225</y>
+          <width>100</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 75);
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Explosive Barel&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_pirate_skill2_text">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>225</y>
+          <width>380</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="plainText">
+         <string>You shoot a barel, which explodes in a 2x2 area. Costs 2 action points.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QFrame" name="info_pirate_ultimate_icon">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>350</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 4px;
+border: 2px solid black;
+image: url(:/resources/megacannon.png) 2 2 2 2 stretch stretch;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_pirate_text">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>100</y>
+          <width>330</width>
+          <height>350</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>350</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="plainText">
+         <string>The pirate known as &quot;Barba-Negra&quot; with his fleet of pirates has haunted the 7 seas for generations. The fearsome pirate himself and his mighty ship, The Queen Anne's Revenge. A majestic beast of the sea, with enough cannons and explosives to make the devil himself tremble. Whenever he destroys an enemy ship he claims the loot having 1 extra action point in the next turn.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QFrame" name="info_pirate_skill2_icon">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>225</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 4px;
+border: 2px solid black;
+image: url(:/resources/barrel.png)  2 2 2 2 stretch stretch;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_pirate_label">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>30</y>
+          <width>331</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>26</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pirate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_pirate_skill1_text">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>100</y>
+          <width>380</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="plainText">
+         <string>Shoots a 1x4 line of cannon balls. Costs 3 action points.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_pirate_skill1_label">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>100</y>
+          <width>100</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 75);
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Cannon Barrage&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_pirate_ultimate_text">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>350</y>
+          <width>380</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustIgnored</enum>
+        </property>
+        <property name="plainText">
+         <string>Destroy an enemy ship by hitting a damaged square with the humungous cannon. Costs 5 action points.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_pirate_ultimate_label">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>350</y>
+          <width>100</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 75);
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Humungous!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <zorder>info_pirate_skill2_icon</zorder>
+       <zorder>info_pirate_skill1_icon_</zorder>
+       <zorder>info_pirate_skill_label</zorder>
+       <zorder>info_pirate_skill2_label</zorder>
+       <zorder>info_pirate_skill2_text</zorder>
+       <zorder>info_pirate_ultimate_icon</zorder>
+       <zorder>info_pirate_text</zorder>
+       <zorder>info_pirate_label</zorder>
+       <zorder>info_pirate_skill1_text</zorder>
+       <zorder>info_pirate_skill1_label</zorder>
+       <zorder>info_pirate_ultimate_text</zorder>
+       <zorder>info_pirate_ultimate_label</zorder>
+      </widget>
+      <widget class="QWidget" name="info_space">
+       <widget class="QLabel" name="info_space_skill2_label">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>225</y>
+          <width>100</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 75);
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Double Beam&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_space_ultimate_label">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>350</y>
+          <width>100</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 75);
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Superlaser&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QFrame" name="info_space_skill2_icon">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>225</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 4px;
+border: 2px solid black;
+image: url(:/resources/doublebeam.png) 2 2 2 2 stretch stretch;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_space_label">
+        <property name="geometry">
+         <rect>
+          <x>-1</x>
+          <y>30</y>
+          <width>421</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>26</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Space Commander&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_space_text">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>100</y>
+          <width>330</width>
+          <height>350</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>350</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="plainText">
+         <string>The galaxy's most famous space commander, James Kirk, captain of the USS Enterprise. Travelling at warp speed, this Starfleet captain uses the most advanced weapons from the year 2265 to fight evil in space. Using advanced energy recovery tecnology his normal shot uses only 1 action point and he can shoot again if he hits.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_space_ultimate_text">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>350</y>
+          <width>380</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustIgnored</enum>
+        </property>
+        <property name="plainText">
+         <string>Fires a full-star laser that will do damage to anything in a 1x12 line. Costs 8 action points.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_space_skill1_label">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>100</y>
+          <width>100</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>7</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(0, 0, 0, 75);
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Ion Blaster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_space_skill1_text">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>100</y>
+          <width>380</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="plainText">
+         <string>Fires a blaster in a diagonal line that will continue until it hits a target. Costs 4 action points.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_space_skill_label">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>30</y>
+          <width>501</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>KG Red Hands</family>
+          <pointsize>26</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: white;
+</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Skill Description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::RichText</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="info_space_skill1_icon">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>100</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 4px;
+border: 2px solid black;
+image: url(:/resources/ionblaster.png)  2 2 2 2 stretch stretch;
+</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="info_space_skill2_text">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>225</y>
+          <width>380</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>380</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Vanilla Extract</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgba(0, 0, 0, 130);
+border:0px;</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="plainText">
+         <string>Shot a double-beam that will cause damage 2 squares. Costs 2 action points.</string>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::NoTextInteraction</set>
+        </property>
+       </widget>
+       <widget class="QFrame" name="info_space_ultimate_icon">
+        <property name="geometry">
+         <rect>
+          <x>425</x>
+          <y>350</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 4px;
+border: 2px solid black;
+image: url(:/resources/deathlaser.png) 2 2 2 2 stretch stretch;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+       </widget>
+       <zorder>info_space_skill2_icon</zorder>
+       <zorder>info_space_label</zorder>
+       <zorder>info_space_text</zorder>
+       <zorder>info_space_ultimate_text</zorder>
+       <zorder>info_space_skill1_text</zorder>
+       <zorder>info_space_skill_label</zorder>
+       <zorder>info_space_skill1_icon</zorder>
+       <zorder>info_space_skill2_text</zorder>
+       <zorder>info_space_ultimate_icon</zorder>
+       <zorder>info_space_skill2_label</zorder>
+       <zorder>info_space_skill1_label</zorder>
+       <zorder>info_space_ultimate_label</zorder>
+      </widget>
+     </widget>
+     <widget class="QToolButton" name="info_back_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="enemy_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QGraphicsView" name="enemy_board">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>110</y>
+        <width>500</width>
+        <height>500</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>500</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>500</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="enemy_title">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>30</y>
+        <width>320</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="enemy_myturn_button">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>My Turn</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="enemy_continue_button">
+      <property name="geometry">
+       <rect>
+        <x>405</x>
+        <y>550</y>
+        <width>150</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QWidget" name="enemy_defeat" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>0</width>
+        <height>0</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="settings_background">
+     <property name="maximumSize">
+      <size>
+       <width>960</width>
+       <height>720</height>
+      </size>
+     </property>
+     <widget class="QToolButton" name="settings_back_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>620</y>
+        <width>200</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Vanilla Extract</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QToolButton::hover{ color: white; background: transparent; font-size: 40px;}
+QToolButton {background: transparent; color: white; font-size: 30px;}
+</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="settings_audio_label">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>281</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Audio Options</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="settings_music_volume_slider">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>173</y>
+        <width>361</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>OpenHandCursor</cursorShape>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>20</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="settings_music_volume_number">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>150</y>
+        <width>120</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="settings_music_volume_label">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>150</y>
+        <width>120</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Music</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="settings_effects_volume_slider">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>273</y>
+        <width>361</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>OpenHandCursor</cursorShape>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>20</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="settings_effects_volume_label">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>250</y>
+        <width>150</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Effects</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="settings_effects_volume_number">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>250</y>
+        <width>120</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QSlider" name="settings_quotes_volume_slider">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>373</y>
+        <width>361</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>OpenHandCursor</cursorShape>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>50</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="settings_quotes_volume_label">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>350</y>
+        <width>150</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Quotes</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="settings_quotes_volume_number">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>350</y>
+        <width>120</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>KG Red Hands</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
