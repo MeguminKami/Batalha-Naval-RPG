@@ -43,7 +43,7 @@
    <string>Batalha Naval RPG</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resource.qrc">
+   <iconset resource="../../assets/images/resource.qrc">
     <normaloff>:/resources/gameicon.png</normaloff>:/resources/gameicon.png</iconset>
   </property>
   <property name="autoFillBackground">
@@ -4139,7 +4139,7 @@ color: white;</string>
   </widget>
  </widget>
  <resources>
-  <include location="resource.qrc"/>
+  <include location="../../assets/images/resource.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -1,88 +1,82 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.21)
 
-project(src VERSION 0.1 LANGUAGES CXX)
-
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
+project(BatalhaNavalRPG VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia SpatialAudio)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia SpatialAudio)
-
-
-set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC_SEARCH_PATHS
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/assets/images
 )
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(src
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
+find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia Network)
 
-        resource.qrc
-        board.h board.cpp
-        skill.h skill.cpp
-        passive.h passive.cpp
-        character.h character.cpp
-        player.h player.cpp
-        objects.h objects.cpp
-        position.h
-        cpu.h cpu.cpp
-        preview.h preview.cpp
-        fonts.qrc
-        sounds.qrc
-        sounds.cpp sounds.h
-        server.cpp server.h
-        client.cpp client.h
+set(APP_SOURCES
+    src/app/main.cpp
+    src/app/mainwindow.cpp
+    src/app/mainwindow.h
+    src/ui/mainwindow.ui
 
-    )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET src APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-else()
-    if(ANDROID)
-        add_library(src SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(src
-            ${PROJECT_SOURCES}
-        )
-    endif()
-endif()
+    src/audio/sounds.cpp
+    src/audio/sounds.h
 
-target_link_libraries(src PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Multimedia Qt${QT_VERSION_MAJOR}::SpatialAudio)
+    src/game/board.cpp
+    src/game/board.h
+    src/game/character.cpp
+    src/game/character.h
+    src/game/cpu.cpp
+    src/game/cpu.h
+    src/game/objects.cpp
+    src/game/objects.h
+    src/game/passive.cpp
+    src/game/passive.h
+    src/game/player.cpp
+    src/game/player.h
+    src/game/position.h
+    src/game/preview.cpp
+    src/game/preview.h
+    src/game/skill.cpp
+    src/game/skill.h
 
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
-if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.src)
-endif()
-set_target_properties(src PROPERTIES
-    ${BUNDLE_ID_OPTION}
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
+    src/network/client.cpp
+    src/network/client.h
+    src/network/protocol.h
+    src/network/server.cpp
+    src/network/server.h
+
+    assets/fonts/fonts.qrc
+    assets/images/resource.qrc
+    assets/sounds/sounds.qrc
+)
+
+qt_add_executable(BatalhaNavalRPG
+    MANUAL_FINALIZATION
+    ${APP_SOURCES}
+)
+
+target_include_directories(BatalhaNavalRPG PRIVATE
+    src/app
+    src/audio
+    src/game
+    src/network
+)
+
+target_link_libraries(BatalhaNavalRPG PRIVATE
+    Qt6::Widgets
+    Qt6::Multimedia
+    Qt6::Network
+)
+
+set_target_properties(BatalhaNavalRPG PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-include(GNUInstallDirs)
-install(TARGETS src
+install(TARGETS BatalhaNavalRPG
     BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    RUNTIME DESTINATION bin
 )
 
-if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(src)
-endif()
+qt_finalize_executable(BatalhaNavalRPG)

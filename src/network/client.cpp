@@ -1,5 +1,7 @@
 #include "client.h"
 
+#include <QDebug>
+
 Client::Client(QObject *parent) : QObject(parent) {
     //_tcpSocket = new QTcpSocket(this);
     connect(&_tcpSocket, &QTcpSocket::readyRead, this, &Client::socket_readyRead);
@@ -118,4 +120,9 @@ void Client::connectC2(QString joinCode) {
 // Sends data
 void Client::sendData(const QByteArray &data) {
     _tcpSocket.write(data);
+}
+
+QString Client::readJoincode()
+{
+    return _ip + QStringLiteral(":") + QString::number(_port);
 }

@@ -1,6 +1,6 @@
 #ifndef PASSIVE_H
 #define PASSIVE_H
-#include <iostream>
+#include <string>
 
 using namespace std;
 

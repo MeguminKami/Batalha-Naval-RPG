@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file alias="captain_line.mp3">captain_line.mp3</file>
+        <file alias="captaintheme.mp3">captaintheme.mp3</file>
+        <file alias="clicksound.wav">clicksound.wav</file>
+        <file alias="defeat.mp3">defeat.mp3</file>
+        <file alias="epicmenumusic.mp3">epicmenumusic.mp3</file>
+        <file alias="explosion.mp3">explosion.mp3</file>
+        <file alias="hit.mp3">hit.mp3</file>
+        <file alias="interface.mp3">interface.mp3</file>
+        <file alias="pirate_line.mp3">pirate_line.mp3</file>
+        <file alias="piratetheme.mp3">piratetheme.mp3</file>
+        <file alias="space_line.mp3">space_line.mp3</file>
+        <file alias="spacetheme.mp3">spacetheme.mp3</file>
+        <file alias="victory_music.mp3">victory_music.mp3</file>
+    </qresource>
+</RCC>

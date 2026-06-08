@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file alias="KGRedHands.ttf">KGRedHands.ttf</file>
+        <file alias="VanillaExtract.ttf">VanillaExtract.ttf</file>
+    </qresource>
+</RCC>

@@ -6,6 +6,7 @@
 #include "sounds.h"
 #include "client.h"
 #include "server.h"
+#include "protocol.h"
 #include <iostream>
 #include <random>
 #include <QThread>

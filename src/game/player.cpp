@@ -824,7 +824,7 @@ bool player::sendRadar(pos pos)
 {
     // Builds the data packet
     QByteArray data;
-    data.append(QString(ARADAR_P).toUtf8());
+    data.append(QByteArray(1, ARADAR_P));
     data.append(QString::number(pos.x).toUtf8());
     data.append('.');
     data.append(QString::number(pos.y).toUtf8());
@@ -962,7 +962,7 @@ bool player::waitPacket(QString dataString)
             // Calculates response
             responseBOOL = respondRadar(pos);
             // Answers
-            data.append(QString(RRADAR_P).toUtf8());
+            data.append(QByteArray(1, RRADAR_P));
             data.append(QString::number(responseBOOL ? 1 : 0).toUtf8());
             client->sendData(data);
         break;
