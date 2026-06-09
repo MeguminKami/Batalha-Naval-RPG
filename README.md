@@ -1,100 +1,274 @@
 # Batalha Naval RPG
 
-Batalha Naval RPG is a Qt 6/C++ battleship-style RPG with offline CPU play and a lightweight host/join multiplayer mode.
+Batalha Naval RPG is a desktop battleship RPG built with C++ and Qt 6. It mixes the classic grid-based naval battle formula with character selection, skills, ship placement, offline CPU play, and a lightweight host/join multiplayer mode.
 
-## Project Layout
+The project is designed to be built from source with CMake and packaged on Windows as a portable game folder: a directory containing the main `.exe` plus all Qt DLLs and runtime files needed to run the game without an installer.
 
-- `src/app` - application entry point and main window logic
-- `src/game` - board, player, CPU, character, ship, skill, and placement logic
-- `src/network` - TCP client/server and packet constants
-- `src/audio` - Qt Multimedia sound wrapper
-- `src/ui` - Qt Designer UI file
-- `assets/images`, `assets/fonts`, `assets/sounds` - Qt resources embedded into the game
-- `docs` - game documentation PDF
-- `dist/windows` - packaged Windows build zip
-- `scripts` - PowerShell helpers for build/run tasks
+## Features
+
+- Classic battleship-style board gameplay
+- RPG-inspired characters and skills
+- Manual and randomized ship placement
+- Offline mode against a CPU opponent
+- Local host/join multiplayer over TCP
+- Qt Widgets interface designed with Qt Designer
+- Embedded images, fonts, and sound resources through Qt resource files
+- Windows portable release packaging with `windeployqt`
+
+## Tech Stack
+
+- C++17
+- Qt 6 Widgets
+- Qt Multimedia
+- Qt Network
+- CMake
+- Ninja
+- MinGW-compatible C++ compiler on Windows
+
+## Project Structure
+
+```text
+Batalha-Naval-RPG/
+  assets/
+    fonts/          Embedded font resources
+    images/         Embedded image resources
+    sounds/         Embedded sound resources
+  docs/             Extra project documentation
+  scripts/          PowerShell build and run helpers
+  src/
+    app/            Application entry point and main window logic
+    audio/          Sound wrapper built on Qt Multimedia
+    game/           Board, player, CPU, character, ship, skill, and placement logic
+    network/        TCP client/server and protocol constants
+    ui/             Qt Designer UI file
+  CMakeLists.txt    Main CMake project file
+  CMakePresets.json Windows Debug and Release CMake presets
+```
 
 ## Requirements
 
-Install:
+Install the following tools before building:
 
 - Qt 6 for Windows with the MinGW 64-bit kit
 - Qt Multimedia module
 - CMake 3.21 or newer
 - Ninja
+- A MinGW-compatible C++ compiler available in `PATH`
+- PowerShell
 
-The original project metadata used **Desktop Qt 6.6.1 MinGW 64-bit**, so this is the safest version to install.
+The original project setup uses **Desktop Qt 6.6.1 MinGW 64-bit**, so Qt `6.6.1` is the safest version for this repository.
 
-After installing Qt, set `QT_DIR` to your Qt kit folder:
+## Installing Qt 6.6.1 From Terminal
+
+One convenient way to install Qt from PowerShell is with `aqtinstall`.
+
+```powershell
+py -3 -m pip install --upgrade pip aqtinstall
+
+py -3 -m aqt install-qt `
+  --outputdir C:\Qt `
+  windows desktop 6.6.1 win64_mingw `
+  -m qtmultimedia
+```
+
+After installation, set `QT_DIR` to the Qt kit folder:
 
 ```powershell
 $env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
 ```
 
-If your Qt version is different, change only the path, for example:
+To verify that Qt is installed correctly:
 
 ```powershell
-$env:QT_DIR = "C:\Qt\6.8.0\mingw_64"
+Test-Path "$env:QT_DIR\lib\cmake\Qt6\Qt6Config.cmake"
+Test-Path "$env:QT_DIR\lib\cmake\Qt6Multimedia\Qt6MultimediaConfig.cmake"
+Test-Path "$env:QT_DIR\bin\windeployqt.exe"
 ```
 
-## Build From Source
+Each command should return `True`.
 
-From the project root:
+## Building From Source
+
+From the repository root, build the Debug version:
 
 ```powershell
+$env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
 .\scripts\build.ps1 -QtDir $env:QT_DIR
 ```
 
-Or use CMake directly:
+Build the Release version:
 
 ```powershell
-cmake --preset windows-debug
-cmake --build --preset windows-debug
+$env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+.\scripts\build.ps1 -QtDir $env:QT_DIR -Configuration Release
 ```
 
-## Run From Source
+The generated executables are written to:
+
+```text
+build/windows-debug/BatalhaNavalRPG.exe
+build/windows-release/BatalhaNavalRPG.exe
+```
+
+## Running From Source
+
+Run the Debug build:
 
 ```powershell
+$env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
 .\scripts\run.ps1 -QtDir $env:QT_DIR
 ```
 
-To run without rebuilding first:
+Run the Release build:
 
 ```powershell
-.\scripts\run.ps1 -QtDir $env:QT_DIR -NoBuild
+$env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+.\scripts\run.ps1 -QtDir $env:QT_DIR -Configuration Release
 ```
 
-## Run The Packaged Windows Build
+Run an already-built executable without rebuilding:
 
-The repository also includes a packaged build with Qt DLLs:
+```powershell
+.\scripts\run.ps1 -QtDir $env:QT_DIR -Configuration Release -NoBuild
+```
+
+## Creating A Portable Windows Build
+
+A normal Qt `.exe` usually cannot be distributed alone. It needs Qt DLLs, plugins, multimedia backends, platform files, and compiler runtime DLLs beside it. Qt provides `windeployqt` to create that folder automatically.
+
+First, build the game in Release mode:
+
+```powershell
+$env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+.\scripts\build.ps1 -QtDir $env:QT_DIR -Configuration Release
+```
+
+Create the portable folder:
+
+```powershell
+New-Item -ItemType Directory -Force .\dist\windows\BatalhaNavalRPG
+Copy-Item .\build\windows-release\BatalhaNavalRPG.exe .\dist\windows\BatalhaNavalRPG\ -Force
+```
+
+Copy the Qt runtime files into the portable folder:
+
+```powershell
+& "$env:QT_DIR\bin\windeployqt.exe" `
+  --release `
+  --compiler-runtime `
+  .\dist\windows\BatalhaNavalRPG\BatalhaNavalRPG.exe
+```
+
+The portable folder will look similar to this:
+
+```text
+dist/windows/BatalhaNavalRPG/
+  BatalhaNavalRPG.exe
+  Qt6Core.dll
+  Qt6Gui.dll
+  Qt6Multimedia.dll
+  Qt6Network.dll
+  Qt6Widgets.dll
+  platforms/
+    qwindows.dll
+  multimedia/
+  imageformats/
+  styles/
+  translations/
+```
+
+To create a zip file that can be shared:
+
+```powershell
+Compress-Archive `
+  -Path .\dist\windows\BatalhaNavalRPG `
+  -DestinationPath .\dist\windows\BatalhaNavalRPG-portable.zip `
+  -Force
+```
+
+Share `dist/windows/BatalhaNavalRPG-portable.zip` or the full `dist/windows/BatalhaNavalRPG` folder. The player should open `BatalhaNavalRPG.exe` from inside that folder.
+
+## Running The Included Packaged Build
+
+If `dist/windows/bnrpg_online.zip` is present, it can be extracted and started with:
 
 ```powershell
 .\scripts\run-packaged.ps1
 ```
 
-This extracts `dist/windows/bnrpg_online.zip` if needed and starts the packaged executable.
+This helper is only for the packaged zip already stored in `dist/windows`. For a fresh build from source, use the portable build steps above.
 
-## Qt Creator
-
-1. Open `CMakeLists.txt` in Qt Creator.
-2. Select a Qt 6 MinGW 64-bit kit.
-3. Configure the project.
-4. Build and run the `BatalhaNavalRPG` target.
-
-## Quick Smoke Tests
-
-Offline:
+## Gameplay Overview
 
 1. Start the game.
-2. Choose offline play.
-3. Select a character and enter a name.
-4. Randomize or place ships.
-5. Start the match, use a skill, end the turn, and confirm the CPU takes a turn.
+2. Choose offline play or create/join an online match.
+3. Select a character and enter a player name.
+4. Place ships manually or randomize the layout.
+5. Start the match.
+6. Attack enemy board positions, use character skills, and end turns until one fleet is destroyed.
 
-Online on one machine:
+## Online Play
 
-1. Start two game instances.
-2. In the first instance, create a game and copy the share code.
-3. In the second instance, join with that code.
-4. Ready both players.
-5. Confirm turns pass between windows and hits appear on the other board.
+To test online play on one computer:
+
+1. Start the first game instance.
+2. Create a game and copy the share code.
+3. Start a second game instance.
+4. Join the game with the share code.
+5. Ready both players.
+6. Play the match and confirm turns pass between both windows.
+
+## Troubleshooting
+
+### `Qt6MultimediaConfig.cmake does NOT exist`
+
+Qt Multimedia is missing. Install Qt again with the multimedia module:
+
+```powershell
+py -3 -m aqt install-qt --outputdir C:\Qt windows desktop 6.6.1 win64_mingw -m qtmultimedia
+```
+
+### `windeployqt.exe is not recognized`
+
+Check that `QT_DIR` points to the Qt kit folder, not only to `C:\Qt`:
+
+```powershell
+$env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+Test-Path "$env:QT_DIR\bin\windeployqt.exe"
+```
+
+### `BatalhaNavalRPG.exe does not exist`
+
+Build the Release target first:
+
+```powershell
+.\scripts\build.ps1 -QtDir $env:QT_DIR -Configuration Release
+```
+
+The executable should appear at:
+
+```text
+build/windows-release/BatalhaNavalRPG.exe
+```
+
+### The game opens from the build folder but not from the portable folder
+
+Run `windeployqt` again on the copied executable:
+
+```powershell
+& "$env:QT_DIR\bin\windeployqt.exe" --release --compiler-runtime .\dist\windows\BatalhaNavalRPG\BatalhaNavalRPG.exe
+```
+
+Make sure the `platforms/qwindows.dll` file exists inside the portable folder.
+
+## Development Notes
+
+- The project uses `CMAKE_AUTOMOC`, `CMAKE_AUTOUIC`, and `CMAKE_AUTORCC`.
+- UI layout is stored in `src/ui/mainwindow.ui`.
+- Assets are compiled into the executable through Qt resource files.
+- The main CMake target is `BatalhaNavalRPG`.
+- Windows presets are defined in `CMakePresets.json`.
+
+## License
+
+Add the project license here before publishing the repository publicly.
