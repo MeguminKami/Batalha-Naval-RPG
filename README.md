@@ -4,6 +4,10 @@ Batalha Naval RPG is a desktop battleship RPG built with C++ and Qt 6. It mixes 
 
 The project is designed to be built from source with CMake and packaged on Windows as a portable game folder: a directory containing the main `.exe` plus all Qt DLLs and runtime files needed to run the game without an installer.
 
+## Academic Context
+
+This game was created as part of a school curricular unit. The repository is kept public as a portfolio and learning project, showing the source code, build workflow, packaging process, and project documentation.
+
 ## Features
 
 - Classic battleship-style board gameplay
@@ -53,7 +57,7 @@ Install the following tools before building:
 - Qt Multimedia module
 - CMake 3.21 or newer
 - Ninja
-- A MinGW-compatible C++ compiler available in `PATH`
+- The Qt-compatible MinGW 11.2.0 compiler available in `PATH`
 - PowerShell
 
 The original project setup uses **Desktop Qt 6.6.1 MinGW 64-bit**, so Qt `6.6.1` is the safest version for this repository.
@@ -69,12 +73,17 @@ py -3 -m aqt install-qt `
   --outputdir C:\Qt `
   windows desktop 6.6.1 win64_mingw `
   -m qtmultimedia
+
+py -3 -m aqt install-tool `
+  --outputdir C:\Qt `
+  windows desktop tools_mingw90 qt.tools.win64_mingw900
 ```
 
 After installation, set `QT_DIR` to the Qt kit folder:
 
 ```powershell
 $env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+$env:PATH = "C:\Qt\Tools\mingw1120_64\bin;$env:QT_DIR\bin;$env:PATH"
 ```
 
 To verify that Qt is installed correctly:
@@ -83,6 +92,7 @@ To verify that Qt is installed correctly:
 Test-Path "$env:QT_DIR\lib\cmake\Qt6\Qt6Config.cmake"
 Test-Path "$env:QT_DIR\lib\cmake\Qt6Multimedia\Qt6MultimediaConfig.cmake"
 Test-Path "$env:QT_DIR\bin\windeployqt.exe"
+Test-Path "C:\Qt\Tools\mingw1120_64\bin\g++.exe"
 ```
 
 Each command should return `True`.
@@ -93,6 +103,7 @@ From the repository root, build the Debug version:
 
 ```powershell
 $env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+$env:PATH = "C:\Qt\Tools\mingw1120_64\bin;$env:QT_DIR\bin;$env:PATH"
 .\scripts\build.ps1 -QtDir $env:QT_DIR
 ```
 
@@ -100,6 +111,7 @@ Build the Release version:
 
 ```powershell
 $env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+$env:PATH = "C:\Qt\Tools\mingw1120_64\bin;$env:QT_DIR\bin;$env:PATH"
 .\scripts\build.ps1 -QtDir $env:QT_DIR -Configuration Release
 ```
 
@@ -116,6 +128,7 @@ Run the Debug build:
 
 ```powershell
 $env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+$env:PATH = "C:\Qt\Tools\mingw1120_64\bin;$env:QT_DIR\bin;$env:PATH"
 .\scripts\run.ps1 -QtDir $env:QT_DIR
 ```
 
@@ -123,6 +136,7 @@ Run the Release build:
 
 ```powershell
 $env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+$env:PATH = "C:\Qt\Tools\mingw1120_64\bin;$env:QT_DIR\bin;$env:PATH"
 .\scripts\run.ps1 -QtDir $env:QT_DIR -Configuration Release
 ```
 
@@ -140,6 +154,7 @@ First, build the game in Release mode:
 
 ```powershell
 $env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+$env:PATH = "C:\Qt\Tools\mingw1120_64\bin;$env:QT_DIR\bin;$env:PATH"
 .\scripts\build.ps1 -QtDir $env:QT_DIR -Configuration Release
 ```
 
@@ -187,6 +202,56 @@ Compress-Archive `
 ```
 
 Share `dist/windows/BatalhaNavalRPG-portable.zip` or the full `dist/windows/BatalhaNavalRPG` folder. The player should open `BatalhaNavalRPG.exe` from inside that folder.
+
+## Forcing A Clean Remake
+
+If the game does not open, or if CMake accidentally used the wrong compiler, delete the generated Release output and rebuild it from zero.
+
+This project must be built with the Qt-compatible MinGW compiler:
+
+```powershell
+$env:QT_DIR = "C:\Qt\6.6.1\mingw_64"
+$env:PATH = "C:\Qt\Tools\mingw1120_64\bin;$env:QT_DIR\bin;$env:PATH"
+```
+
+Then remove only generated folders/files:
+
+```powershell
+Remove-Item .\build\windows-release -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item .\dist\windows\BatalhaNavalRPG -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item .\dist\windows\BatalhaNavalRPG-portable.zip -Force -ErrorAction SilentlyContinue
+```
+
+Rebuild and redeploy:
+
+```powershell
+.\scripts\build.ps1 -QtDir $env:QT_DIR -Configuration Release
+
+New-Item -ItemType Directory -Force .\dist\windows\BatalhaNavalRPG
+Copy-Item .\build\windows-release\BatalhaNavalRPG.exe .\dist\windows\BatalhaNavalRPG\ -Force
+
+& "$env:QT_DIR\bin\windeployqt.exe" `
+  --release `
+  --compiler-runtime `
+  .\dist\windows\BatalhaNavalRPG\BatalhaNavalRPG.exe
+
+Compress-Archive `
+  -Path .\dist\windows\BatalhaNavalRPG `
+  -DestinationPath .\dist\windows\BatalhaNavalRPG-portable.zip `
+  -Force
+```
+
+To confirm CMake used the right compiler:
+
+```powershell
+Select-String "CMAKE_CXX_COMPILER" .\build\windows-release\CMakeCache.txt
+```
+
+The output should include:
+
+```text
+C:/Qt/Tools/mingw1120_64/bin/c++.exe
+```
 
 ## Running The Included Packaged Build
 
@@ -271,4 +336,6 @@ Make sure the `platforms/qwindows.dll` file exists inside the portable folder.
 
 ## License
 
-Add the project license here before publishing the repository publicly.
+This project is licensed under the [MIT License](LICENSE).
+
+Third-party tools, libraries, and dependencies keep their own licenses. This includes Qt and any external software used to build or package the game.
